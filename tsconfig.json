@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "outDir": "dist",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false, // true for js type check, @ts-check (file top); @ts-nocheck (file top), @ts-ignore (single line)
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "strictPropertyInitialization": false,
+    "noEmit": false, // TODO: true for React | ReactNative
+    "jsx": "preserve" // TODO: use 'react' | 'react-native' for React | ReactNative
+  },
+  "include": ["./src"]
+}

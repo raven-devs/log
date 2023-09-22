@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
+/**
+ * node bin/commit-main
+ */
+
+const commitToMain = async () => {
+  try {
+    await exec(`git checkout develop`);
+    await exec(`npm run commit`);
+    await exec(`git push`);
+    await exec(`git checkout main`);
+    await exec(`git merge develop`);
+    await exec(`git push`);
+    await exec(`git checkout develop`);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
+
+commitToMain();
